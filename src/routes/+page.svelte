@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { generateRandomColor, getContrastColor } from '$lib/utils/colors';
 	import { enhance } from '$app/forms';
-	import { confetti } from '@neoconfetti/svelte';
-	import { page } from '$app/state';
 
 	let color1 = generateRandomColor();
 	let color2 = generateRandomColor();
@@ -82,6 +80,7 @@
 		margin-bottom: 0.5rem;
 		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 		-webkit-background-clip: text;
+		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		text-align: center;
 	}
