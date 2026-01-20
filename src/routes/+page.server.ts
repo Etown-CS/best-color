@@ -1,9 +1,8 @@
 import { fail } from '@sveltejs/kit';
 import { submitVote } from '$lib/server/actions/submit-vote';
-import { generateRandomColor } from '$lib/utils/colors';
 
 export const actions = {
-	default: async ({ request, getClientAddress }) => {
+	default: async ({ request }) => {
 		const formData = await request.formData();
 		const color1 = formData.get('color1') as string;
 		const color2 = formData.get('color2') as string;
@@ -14,17 +13,16 @@ export const actions = {
 			return fail(400, { error: 'Missing required fields' });
 		}
 
-		const result = await submitVote({
-			color1,
-			color2,
-			chosenColor,
-			userAgent
-		});
-
-		if (result.error) {
-			return fail(500, result);
+		try {
+			await submitVote({
+				color1,
+				color2,
+				chosenColor,
+				userAgent
+			});
+		} catch (error) {
+			return fail(500);
 		}
-
 		return { success: true };
 	}
 };
