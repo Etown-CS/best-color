@@ -1,4 +1,4 @@
-import { db } from '$lib/server/db/client';
+import { db } from '$lib/server/db';
 import { votes } from '$lib/server/db/schema';
 import { fail } from '@sveltejs/kit';
 
