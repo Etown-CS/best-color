@@ -15,7 +15,7 @@ export async function submitVote(data: {
 			chosenColor: data.chosenColor,
 			userAgent: data.userAgent
 		});
-		console.log('Yippee we submitted the vote!!!');
+		console.log('Yippee we submitted the vote for color', data.chosenColor);
 		return { success: true };
 	} catch (error) {
 		console.error('Failed to submit vote:', error);
