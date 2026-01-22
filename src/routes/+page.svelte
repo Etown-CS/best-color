@@ -18,7 +18,7 @@
 	<h1>Best Color</h1>
 	<p class="subtitle">Which color do you prefer?</p>
 
-	<form method="POST" use:enhance class="color-comparison">
+	<form method="POST" use:enhance class="color-comparison" on:submit={getNewColors}>
 		<input type="hidden" name="color1" value={color1} />
 		<input type="hidden" name="color2" value={color2} />
 
@@ -30,7 +30,6 @@
 				class="color-option"
 				style:background-color={color1}
 				style:color={textColor1}
-				on:click={getNewColors}
 			>
 				<span class="color-hex">{color1}</span>
 				<span class="choose-text">Choose this color</span>
@@ -45,7 +44,6 @@
 				class="color-option"
 				style:background-color={color2}
 				style:color={textColor2}
-				on:click={getNewColors}
 			>
 				<span class="color-hex">{color2}</span>
 				<span class="choose-text">Choose this color</span>
