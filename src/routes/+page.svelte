@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { generateRandomColor, getContrastColor } from '$lib/utils/colors';
 	import { enhance } from '$app/forms';
+	import Ui from '$lib/components/ui.svelte';
+	import '../app.css';
 
 	let color1 = generateRandomColor();
 	let color2 = generateRandomColor();
@@ -50,6 +52,15 @@
 			</button>
 		</div>
 	</form>
+	<div class="colors-container">
+		<div style="--color-primary: {color1}; --color-base-100: {color1}">
+			<Ui />
+		</div>
+		<div class="text-sky-600">|</div>
+		<div style="--color-primary: {color2}; --color-base-100: {color2}">
+			<Ui />
+		</div>
+	</div>
 
 	<div class="actions">
 		<button on:click={getNewColors} class="secondary"> Generate New Colors </button>
@@ -105,8 +116,8 @@
 
 	.color-option {
 		flex: 1;
-		min-width: 300px;
-		height: 400px;
+		min-width: 200px;
+		height: 120px;
 		border: none;
 		border-radius: 20px;
 		cursor: pointer;
@@ -115,11 +126,9 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 1rem;
 		font-size: 1.5rem;
 		font-weight: bold;
 		text-transform: uppercase;
-		letter-spacing: 1px;
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 	}
 
