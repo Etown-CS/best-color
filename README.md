@@ -14,5 +14,5 @@ bun run db:start
 # Push the schema to the database
 bun run db:push
 # Start a dev server
-npm run dev --open
+bun run dev --open
 ```
