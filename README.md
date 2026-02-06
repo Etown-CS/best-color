@@ -4,7 +4,7 @@ A website that presents users with 2 colors in UI contexts and asks them to pick
 
 <img width="2360" height="1307" alt="image" src="https://github.com/user-attachments/assets/b4da6343-920b-46e9-8e3c-17c6130851f9" />
 
-You can find a preview build running on Vercel at [best-color.vercel.app](best-color.vercel.app)
+You can find a preview build running on Vercel at [best-color.vercel.app](https://best-color.vercel.app)
 
 # setup
 
