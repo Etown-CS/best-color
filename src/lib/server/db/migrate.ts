@@ -15,11 +15,14 @@ async function migrate() {
 			);
 		`);
 
-		console.log('✅ Database migration completed successfully');
+		console.log('Database migration completed successfully');
 	} catch (error) {
-		console.error('❌ Database migration failed:', error);
+		console.error('Database migration failed:', error);
 		process.exit(1);
 	}
 }
 
-migrate();
+// Only run if called directly (not in serverless environment)
+if (import.meta.url === `file://${process.argv[1]}`) {
+	migrate();
+}
