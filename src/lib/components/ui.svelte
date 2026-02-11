@@ -32,4 +32,25 @@
 			<div class="bg-base-300 grid h-12 w-22 place-items-center">content</div>
 		</div>
 	</div>
+	<div
+		class="radial-progress text-primary"
+		style="--value:70;"
+		aria-valuenow="70"
+		role="progressbar"
+	>
+		70%
+	</div>
+	<progress class="progress progress-primary w-56"></progress>
+
+	<div class="bg-base-100 border-base-300 p-6">
+		<span class="loading loading-spinner text-primary"></span>
+		<span class="loading loading-dots text-primary"></span>
+		<span class="loading loading-ring text-primary"></span>
+		<span class="loading loading-ball text-primary"></span>
+		<span class="loading loading-bars text-primary"></span>
+		<span class="loading loading-infinity text-primary"></span>
+	</div>
+	<div class="bg-base-100 border-base-300 p-6">
+		<input type="file" class="file-input file-input-primary" />
+	</div>
 </div>
