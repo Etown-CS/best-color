@@ -53,12 +53,12 @@
 		</div>
 	</form>
 	<div class="colors-container">
-		<div style="--color-primary: {color1}; --color-base-100: {color1}">
-			<Ui />
+		<div style="--color-primary: {color1}; --color-primary-content: {textColor1}">
+			<Ui name="ui1" name2="radio1" />
 		</div>
-		<div class="text-sky-600">|</div>
-		<div style="--color-primary: {color2}; --color-base-100: {color2}">
-			<Ui />
+		<div class="text-sky-600" style="margin:auto;">|</div>
+		<div style="--color-primary: {color2}; --color-primary-content: {textColor2}">
+			<Ui name="ui2" name2="radio2" />
 		</div>
 	</div>
 
@@ -106,7 +106,8 @@
 	}
 
 	.colors-container {
-		display: flex;
+		display: grid;
+		grid-template-columns: 5fr 1fr 5fr;
 		gap: 2rem;
 		align-items: center;
 		justify-content: center;
