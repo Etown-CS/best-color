@@ -1,4 +1,6 @@
 <script>
+	// @ts-nocheck
+
 	export let name = 'ui1';
 	export let name2 = 'radio';
 	export let pagination = 'page';
