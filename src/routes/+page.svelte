@@ -78,13 +78,20 @@
 			</button>
 		</div>
 	</form>
-	<div class="colors-container">
-		<div style="--color-primary: {color1}; --color-primary-content: {textColor1}">
-			<Ui name="ui1" name2="radio1" pagination="page1" />
-		</div>
-		<div class="text-sky-600" style="margin:auto;">|</div>
-		<div style="--color-primary: {color2}; --color-primary-content: {textColor2}">
-			<Ui name="ui2" name2="radio2" pagination="page2" />
+
+	<div class="bg-base-100 border-base-300 collapse border">
+		<input type="checkbox" />
+		<div class="collapse-title font-semibold">Show UI Components</div>
+		<div class="collapse-content">
+			<div class="colors-container">
+				<div style="--color-primary: {color1}; --color-primary-content: {textColor1}">
+					<Ui name="ui1" name2="radio1" pagination="page1" />
+				</div>
+				<div class="text-sky-600" style="margin:auto;">|</div>
+				<div style="--color-primary: {color2}; --color-primary-content: {textColor2}">
+					<Ui name="ui2" name2="radio2" pagination="page2" />
+				</div>
+			</div>
 		</div>
 	</div>
 
