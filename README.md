@@ -2,7 +2,7 @@
 
 A website that presents users with 2 colors in UI contexts and asks them to pick one. It collects this data with the user's browser, os, etc.
 
-<img width="2360" height="1307" alt="image" src="https://github.com/user-attachments/assets/b4da6343-920b-46e9-8e3c-17c6130851f9" />
+<img width="2654" height="1540" alt="image" src="https://github.com/user-attachments/assets/db812f42-b8fd-4615-affc-acf540caf4b4" />
 
 You can find a preview build running on Vercel at [best-color.vercel.app](https://best-color.vercel.app)
 
