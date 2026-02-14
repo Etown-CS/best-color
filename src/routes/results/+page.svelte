@@ -9,10 +9,10 @@
 </script>
 
 <div class="container">
-	<h1>Results</h1>
+	<h1 class="text-base">Results</h1>
 
 	<div class="stats-grid">
-		<div class="stat-card">
+		<div class="stat-card bg-base-200">
 			<div class="stat-number">{totalVotes || 0}</div>
 			<div class="stat-label">Total Votes</div>
 		</div>
@@ -38,13 +38,13 @@
 	</div>
 
 	{#if totalVotes === 0}
-		<div class="empty-state">
+		<div class="empty-state bg-base-200">
 			<h2>No votes yet!</h2>
 			<p>Be the first to vote on the home page.</p>
 			<a href="/" class="btn-primary">Vote Now</a>
 		</div>
 	{:else}
-		<div class="recent-section">
+		<div class="recent-section bg-base-200">
 			<h2>Recent Votes</h2>
 			<div class="recent-list">
 				{#each recentVotes.slice(0, 5) as vote}
@@ -69,7 +69,7 @@
 		</div>
 	{/if}
 
-	<a href="/" class="back-btn">← Back to Voting</a>
+	<a href="/" class="back-btn btn-primary">← Back to Voting</a>
 </div>
 
 <style>
@@ -83,10 +83,6 @@
 		font-size: 2.5rem;
 		text-align: center;
 		margin-bottom: 2rem;
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-		-webkit-background-clip: text;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
 	}
 
 	.stats-grid {
@@ -97,7 +93,6 @@
 	}
 
 	.stat-card {
-		background: white;
 		padding: 1.5rem;
 		border-radius: 12px;
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -111,7 +106,6 @@
 	}
 
 	.stat-label {
-		color: #666;
 		font-size: 0.9rem;
 	}
 
@@ -127,18 +121,15 @@
 	.empty-state {
 		text-align: center;
 		padding: 3rem 1rem;
-		background: #f8fafc;
 		border-radius: 12px;
 		margin-bottom: 2rem;
 	}
 
 	.empty-state h2 {
-		color: #334155;
 		margin-bottom: 0.5rem;
 	}
 
 	.empty-state p {
-		color: #64748b;
 		margin-bottom: 1.5rem;
 	}
 
@@ -146,15 +137,10 @@
 		display: inline-block;
 		padding: 0.75rem 1.5rem;
 		background: #3b82f6;
-		color: white;
 		text-decoration: none;
 		border-radius: 8px;
 		font-weight: 600;
 		transition: background 0.3s;
-	}
-
-	.btn-primary:hover {
-		background: #2563eb;
 	}
 
 	.recent-section {
@@ -168,7 +154,6 @@
 	.recent-section h2 {
 		font-size: 1.2rem;
 		margin-bottom: 1rem;
-		color: #334155;
 	}
 
 	.recent-list {
@@ -182,7 +167,6 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: 0.75rem;
-		background: #f8fafc;
 		border-radius: 8px;
 	}
 
@@ -204,29 +188,21 @@
 	}
 
 	.chosen-label {
-		color: #3b82f6;
 		font-weight: bold;
 		margin: 0 0.25rem;
 	}
 
 	.vote-time {
-		color: #64748b;
 		font-size: 0.9rem;
 	}
 
 	.back-btn {
 		display: inline-block;
 		padding: 0.75rem 1.5rem;
-		background: #f1f5f9;
-		color: #334155;
 		text-decoration: none;
 		border-radius: 8px;
 		font-weight: 600;
 		transition: background 0.3s;
-	}
-
-	.back-btn:hover {
-		background: #e2e8f0;
 	}
 
 	@media (max-width: 640px) {
