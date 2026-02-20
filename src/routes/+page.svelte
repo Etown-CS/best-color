@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { generateRandomColor, getContrastColor } from '$lib/utils/colors';
 	import { enhance } from '$app/forms';
-	import { browser } from '$app/environment';
-
 	import Ui from '$lib/components/ui.svelte';
 	import '../app.css';
 	import { onMount } from 'svelte';
@@ -13,11 +11,16 @@
 	onMount(() => {
 		let root = document.documentElement;
 		let rootStyles = getComputedStyle(root);
-		let theme = rootStyles.getPropertyValue('color-scheme').trim();
+		theme = rootStyles.getPropertyValue('color-scheme').trim();
+		console.log(theme);
 	});
 	function getNewColors() {
 		color1 = generateRandomColor();
 		color2 = generateRandomColor();
+		let root = document.documentElement;
+		let rootStyles = getComputedStyle(root);
+		theme = rootStyles.getPropertyValue('color-scheme').trim();
+		console.log(theme);
 	}
 
 	$: textColor1 = getContrastColor(color1);
