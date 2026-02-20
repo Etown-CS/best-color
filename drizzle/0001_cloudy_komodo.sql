@@ -1,0 +1,1 @@
+ALTER TABLE "votes" ADD COLUMN "theme" text NOT NULL;
