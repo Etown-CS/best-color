@@ -4,6 +4,7 @@ import { submitVote } from '$lib/server/actions/submit-vote';
 export const actions = {
 	default: async ({ request }) => {
 		const formData = await request.formData();
+		const theme = 'dark' as string;
 		const color1 = formData.get('color1') as string;
 		const color2 = formData.get('color2') as string;
 		const chosenColor = formData.get('chosenColor') as string;
@@ -15,6 +16,7 @@ export const actions = {
 
 		try {
 			await submitVote({
+				theme,
 				color1,
 				color2,
 				chosenColor,

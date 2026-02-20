@@ -1,12 +1,20 @@
 <script lang="ts">
 	import { generateRandomColor, getContrastColor } from '$lib/utils/colors';
 	import { enhance } from '$app/forms';
+	import { browser } from '$app/environment';
+
 	import Ui from '$lib/components/ui.svelte';
 	import '../app.css';
+	import { onMount } from 'svelte';
 
 	let color1 = generateRandomColor();
 	let color2 = generateRandomColor();
-
+	let theme = 'dark';
+	onMount(() => {
+		let root = document.documentElement;
+		let rootStyles = getComputedStyle(root);
+		let theme = rootStyles.getPropertyValue('color-scheme').trim();
+	});
 	function getNewColors() {
 		color1 = generateRandomColor();
 		color2 = generateRandomColor();
@@ -23,6 +31,7 @@
 	<form method="POST" use:enhance class="color-comparison" on:submit={getNewColors}>
 		<input type="hidden" name="color1" value={color1} />
 		<input type="hidden" name="color2" value={color2} />
+		<input type="hidden" name="theme" value={theme} />
 
 		<div class="colors-container">
 			<button
