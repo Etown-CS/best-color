@@ -121,8 +121,8 @@
 
 	.colors-container {
 		display: grid;
-		grid-template-columns: 5fr 1fr 5fr;
-		gap: 2rem;
+		grid-template-columns: 9fr 0.5fr 9fr;
+		gap: 0rem;
 		align-items: center;
 		justify-content: center;
 		margin-bottom: 3rem;
@@ -131,7 +131,7 @@
 
 	.color-option {
 		flex: 1;
-		min-width: 200px;
+		min-width: 150px;
 		height: 120px;
 		border: none;
 		border-radius: 20px;
@@ -173,7 +173,7 @@
 	.vs {
 		font-size: 2rem;
 		font-weight: bold;
-		padding: 1rem;
+		padding: 0rem;
 		border-radius: 50%;
 		width: 80px;
 		height: 80px;
