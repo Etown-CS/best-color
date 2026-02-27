@@ -7,5 +7,12 @@ export const votes = pgTable('votes', {
 	color2: text('color2').notNull(),
 	chosenColor: text('chosen_color').notNull(),
 	userAgent: text('user_agent'),
+	uaBrowser: text('uaBrowser'),
+	uaEngine: text('uaEngine'),
+	uaOS: text('uaOS'),
+	uaDeviceModel: text('uaDeviceModel'),
+	uaDeviceVendor: text('uaDeviceVendor'),
+	uaDeviceType: text('uaDeviceType'),
+	uaCPUArch: text('uaCPUArch'),
 	createdAt: timestamp('created_at').defaultNow().notNull()
 });

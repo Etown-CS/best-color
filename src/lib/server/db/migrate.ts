@@ -12,6 +12,13 @@ async function migrate() {
 				color2 TEXT NOT NULL,
 				chosen_color TEXT NOT NULL,
 				user_agent TEXT,
+        uaBrowser TEXT,
+        uaEngine TEXT,
+        uaOS TEXT,
+        uaDeviceModel TEXT,
+        uaDeviceVendor TEXT,
+        uaDeviceType TEXT,
+        uaCPUArch TEXT,
 				created_at TIMESTAMP DEFAULT NOW() NOT NULL
 			);
 		`);

@@ -8,6 +8,13 @@ export async function submitVote(data: {
 	color2: string;
 	chosenColor: string;
 	userAgent: string | null;
+	uaBrowser: string | undefined;
+	uaEngine: string | undefined;
+	uaOS: string | undefined;
+	uaDeviceModel: string | undefined;
+	uaDeviceVendor: string | undefined;
+	uaDeviceType: string | undefined;
+	uaCPUArch: string | undefined;
 }) {
 	try {
 		await db.insert(votes).values({
@@ -15,7 +22,14 @@ export async function submitVote(data: {
 			color1: data.color1,
 			color2: data.color2,
 			chosenColor: data.chosenColor,
-			userAgent: data.userAgent
+			userAgent: data.userAgent,
+			uaBrowser: data.uaBrowser,
+			uaEngine: data.uaEngine,
+			uaOS: data.uaOS,
+			uaDeviceModel: data.uaDeviceModel,
+			uaDeviceVendor: data.uaDeviceVendor,
+			uaDeviceType: data.uaDeviceType,
+			uaCPUArch: data.uaCPUArch
 		});
 		console.log('Yippee we submitted the vote for color', data.chosenColor);
 		return { success: true };

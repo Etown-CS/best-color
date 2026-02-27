@@ -42,6 +42,7 @@
 	},
 	"dependencies": {
 		"@neondatabase/serverless": "^1.0.2",
-		"postgres": "^3.4.8"
+		"postgres": "^3.4.8",
+		"ua-parser-js": "^2.0.9"
 	}
 }
