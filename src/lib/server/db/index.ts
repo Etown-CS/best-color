@@ -5,7 +5,7 @@ import * as schema from './schema';
 // For Neon, we need to configure the connection properly
 const connectionString = process.env.DATABASE_URL!;
 
-// Configure postgres for serverless/Neon
+// Configure Postgres for serverless/Neon
 const client = postgres(connectionString, {
 	// Neon-specific optimizations
 	idle_timeout: 20,
