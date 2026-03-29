@@ -6,6 +6,8 @@
 	$: ({ totalVotes, mostPopularColor, mostPopularColorCount, browserInfo, recentVotes } = data);
 
 	$: mostPopularBrowser = Object.entries(browserInfo.browsers || {}).sort((a, b) => b[1] - a[1])[0];
+
+	import ColorPopularityChart from '$lib/components/ColorPopularityChart.svelte';
 </script>
 
 <div class="container">
@@ -67,6 +69,8 @@
 				{/each}
 			</div>
 		</div>
+
+		<ColorPopularityChart />
 	{/if}
 
 	<a href="/" class="back-btn btn-primary">← Back to Voting</a>
