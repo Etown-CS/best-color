@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import type { Chart as ChartType } from 'chart.js';
+	import convert from 'color-convert';
 
 	const API_URL = '/api/color-stats';
 
@@ -16,27 +17,6 @@
 	let error = '';
 	let pollTimer: ReturnType<typeof setInterval> | null = null;
 
-	function hexToHue(hex: string): number {
-		const clean = hex.replace('#', '');
-		const r = parseInt(clean.slice(0, 2), 16) / 255;
-		const g = parseInt(clean.slice(2, 4), 16) / 255;
-		const b = parseInt(clean.slice(4, 6), 16) / 255;
-
-		const max = Math.max(r, g, b);
-		const min = Math.min(r, g, b);
-		const delta = max - min;
-
-		if (delta === 0) return 361; // achromatic — sort after violet
-
-		let hue: number;
-		if (max === r) hue = ((g - b) / delta) % 6;
-		else if (max === g) hue = (b - r) / delta + 2;
-		else hue = (r - g) / delta + 4;
-
-		hue = Math.round(hue * 60);
-		return hue < 0 ? hue + 360 : hue;
-	}
-
 	async function fetchData(): Promise<void> {
 		try {
 			error = '';
@@ -46,7 +26,7 @@
 			// Expected shape: { rows: [{ color: string; count: number }] }
 			// Sort by hue position in the visible light spectrum (red → violet),
 			// with achromatic colors (grays/blacks/whites) at the end.
-			rows = (json.rows as Row[]).sort((a, b) => hexToHue(a.color) - hexToHue(b.color));
+			rows = (json.rows as Row[]).sort((a, b) => convert.hex.hsl(a.color)[0] - convert.hex.hsl(b.color)[0]);
 			total = rows.reduce((sum, r) => sum + Number(r.count), 0);
 			renderChart();
 		} catch (err) {
