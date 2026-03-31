@@ -26,7 +26,9 @@
 			// Expected shape: { rows: [{ color: string; count: number }] }
 			// Sort by hue position in the visible light spectrum (red → violet),
 			// with achromatic colors (grays/blacks/whites) at the end.
-			rows = (json.rows as Row[]).sort((a, b) => convert.hex.hsl(a.color)[0] - convert.hex.hsl(b.color)[0]);
+			rows = (json.rows as Row[]).sort(
+				(a, b) => convert.hex.hsl(a.color)[0] - convert.hex.hsl(b.color)[0]
+			);
 			total = rows.reduce((sum, r) => sum + Number(r.count), 0);
 			renderChart();
 		} catch (err) {
